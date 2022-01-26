@@ -65,10 +65,11 @@ const AuthProvider = ({ children }) => {
         return Math.floor(Math.random() * (max - min + 1) + min);
     }
     async function updateUserData(data) {
-        const { content } = await userService.update(data);
-        setUser(content);
+        // const { content } = await userService.update(data);
+        // setUser(content);
         try {
             const { content } = await userService.update(data);
+            console.log(content);
             setUser(content);
         } catch (error) {
             errorCatcher(error);

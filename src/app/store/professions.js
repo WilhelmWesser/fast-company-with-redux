@@ -43,7 +43,6 @@ export const loadProfessionsList = () => async (dispatch, getState) => {
         dispatch(professionsRequested());
         try {
             const { content } = await professionService.get();
-            console.log(content);
             dispatch(professionsReceived(content));
         } catch (error) {
             dispatch(professionsRequestFailed(error.message));
@@ -52,8 +51,6 @@ export const loadProfessionsList = () => async (dispatch, getState) => {
 };
 
 export const getProfessions = () => (state) => {
-    console.log(state.professions);
-    console.log(state.qualities);
     return state.professions.entities;
 };
 export const getProfessionsLoadingStatus = () => (state) =>
