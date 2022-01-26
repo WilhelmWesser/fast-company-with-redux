@@ -1,4 +1,4 @@
-import React from "../../hooks/useProfession";
+import React from "react";
 import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import {
